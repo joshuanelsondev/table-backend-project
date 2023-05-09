@@ -19,7 +19,7 @@ CREATE TABLE dishes (
  name TEXT NOT NULL,
  calories INTEGER,
  is_vegan BOOLEAN,
- ingredients TEXT[],
+ category TEXT,
  image_url TEXT,
  portions INTEGER
 );
