@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS TheTableDB;
-CREATE DATABASE TheTableDB;
+DROP DATABASE IF EXISTS thetabledb;
+CREATE DATABASE thetabledb;
 
-\c TheTableDB;
+\c thetabledb;
 
 CREATE TABLE users (
  id SERIAL PRIMARY KEY,
@@ -12,4 +12,14 @@ CREATE TABLE users (
  is_vegan BOOLEAN,
  restrictions TEXT[],
  date_joined DATE
-)
+);
+
+CREATE TABLE dishes (
+ id SERIAL PRIMARY KEY,
+ name TEXT NOT NULL,
+ calories INTEGER,
+ is_vegan BOOLEAN,
+ ingredients TEXT[],
+ image_url TEXT,
+ portions INTEGER
+);
