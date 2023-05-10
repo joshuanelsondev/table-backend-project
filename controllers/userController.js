@@ -1,5 +1,5 @@
 const express = require('express');
-const dishes = express.Router();
+const users = express.Router();
 
 const {
   getAllDishes,
@@ -7,11 +7,10 @@ const {
   createDish,
   deleteDish,
   updateDish
-} 
-= require('../queries/dishes');
+} = require('../queries/dishes');
 
 // INDEX
-dishes.get('/', async (req, res) => {
+users.get('/', async (req, res) => {
   const { error, dishes } = await getAllDishes()
   if (error) {
     return res.status(500).json({ error: error.message})
@@ -19,11 +18,10 @@ dishes.get('/', async (req, res) => {
     return res.status(200).json({ dishes })
 
   }
-}
-)
+})
 
 // SHOW
-dishes.get('/:id', async (req, res) => {
+users.get('/:id', async (req, res) => {
   const { id } = req.params
   const { error, dish } = await getDish(id)
   if (error) {
@@ -35,7 +33,7 @@ dishes.get('/:id', async (req, res) => {
 )
 
 // CREATE
-dishes.post('/', async (req, res) => {
+users.post('/', async (req, res) => {
   const dish = req.body
   const { error, createdDish } = await createDish(dish)
   if (error) {
@@ -47,7 +45,7 @@ dishes.post('/', async (req, res) => {
 )
 
 // UPDATE
-dishes.put('/:id', async (req, res) => {
+users.put('/:id', async (req, res) => {
   const { id } = req.params
   const dish = req.body
   const { error, updatedDish } = await updateDish(id, dish)
@@ -60,7 +58,7 @@ dishes.put('/:id', async (req, res) => {
 )
 
 // DELETE
-dishes.delete('/:id', async (req, res) => {
+users.delete('/:id', async (req, res) => {
   const { id } = req.params
   const { error, deletedDish } = await deleteDish(id)
   if (error) {
@@ -71,9 +69,7 @@ dishes.delete('/:id', async (req, res) => {
 }
 )
 
-module.exports = dishes;
-
-
+module.exports = users;
 
 
 
