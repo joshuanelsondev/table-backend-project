@@ -2,72 +2,43 @@ const express = require('express');
 const userDishes = express.Router();
 
 const {
-  getAllUserDishes,
-  getUserDish,
-  createUserDish,
-  deleteUserDish,
-  updateUserDish
-} = require('../queries/userDishes');
+  getAllFavoriteDishes,
+  getAllDislikedDishes,
+  addFavoriteDish,
+  updateFavoriteDish,
+} = require("../queries/user_dishes");
 
-// INDEX
-userDishes.get('/', async (req, res) => {
-  const { error, userDishes } = await getAllUserDishes()
+
+// Get all favorite dishes
+userDishes.get('/favorites', async (req, res) => {
+  const { error, userDishesFavs } = await getAllFavoriteDishes();
   if (error) {
-    return res.status(500).json({ error: error.message})
-  }else{
-    return res.status(200).json({ userDishes })
-
+    return res.status(500).json({ error: error.message });
+  } else {
+    return res.status(200).json({ userDishesFavs });
   }
-}
-)
+});
 
-// SHOW
-userDishes.get('/:id', async (req, res) => {
-  const { id } = req.params
-  const { error, userDish } = await getUserDish(id)
+// Get all disliked dishes
+userDishes.get('/disliked', async (req, res) => {
+  const { error, userDishesDisliked } = await getAllDislikedDishes();
   if (error) {
-    return res.status(500).json({ error: error.message})
-  }else{
-    return res.status(200).json({ userDish })
+    return res.status(500).json({ error: error.message });
+  } else {
+    return res.status(200).json({ userDishesDisliked });
   }
-}
-)
+});
 
-// CREATE
-userDishes.post('/', async (req, res) => {
-  const userDish = req.body
-  const { error, createdUserDish } = await createUserDish(userDish)
-  if (error) {
-    return res.status(500).json({ error: error.message})
-  }else{
-    return res.status(200).json({ createdUserDish })
-  }
-}
-)
+// Add to favorites
+// userDishes.get('/add-favorite', async (req, res) => {
 
-// UPDATE
-userDishes.put('/:id', async (req, res) => {
-  const { id } = req.params
-  const userDish = req.body
-  const { error, updatedUserDish } = await updateUserDish(id, userDish)
-  if (error) {
-    return res.status(500).json({ error: error.message})
-  }else{
-    return res.status(200).json({ updatedUserDish })
-  }
-}
-)
+//   const { error, addToFav } = await addFavoriteDish();
+//   if (error) {
+//     return res.status(500).json({ error: error.message });
+//   } else {
+//     return res.status(200).json({ userDishesDisliked });
+//   }
+// });
 
-// DELETE
-userDishes.delete('/:id', async (req, res) => {
-  const { id } = req.params
-  const { error, deletedUserDish } = await deleteUserDish(id)
-  if (error) {
-    return res.status(500).json({ error: error.message})
-  }else{
-    return res.status(200).json({ deletedUserDish })
-  }
-}
-)
 
 module.exports = userDishes;
