@@ -2,21 +2,21 @@ const express = require('express');
 const users = express.Router();
 
 const {
-  getAllDishes,
-  getDish,
-  createDish,
-  deleteDish,
-  updateDish
-} = require('../queries/dishes');
+  getAllUsers,
+  getUser,
+  createUser,
+  deleteUser,
+  updateUser
+} = require('../queries/users');
 
 // INDEX
 users.get('/', async (req, res) => {
-  const { error, dishes } = await getAllDishes()
+  const { error, users } = await getAllUsers()
 
   if (error) {
     return res.status(500).json({ error: error.message})
   }else{
-    return res.status(200).json({ dishes })
+    return res.status(200).json({ users })
 
   }
 })
@@ -24,23 +24,23 @@ users.get('/', async (req, res) => {
 // SHOW
 users.get('/:id', async (req, res) => {
   const { id } = req.params
-  const { error, dish } = await getDish(id)
+  const { error, user } = await getUser(id)
   if (error) {
     return res.status(500).json({ error: error.message})
   }else{
-    return res.status(200).json({ dish })
+    return res.status(200).json({ user })
   }
 }
 )
 
 // CREATE
 users.post('/', async (req, res) => {
-  const dish = req.body
-  const { error, createdDish } = await createDish(dish)
+  const user = req.body
+  const { error, createdUser } = await createUser(user)
   if (error) {
     return res.status(500).json({ error: error.message})
   }else{
-    return res.status(200).json({ createdDish })
+    return res.status(200).json({ createdUser })
   }
 }
 )
@@ -48,12 +48,12 @@ users.post('/', async (req, res) => {
 // UPDATE
 users.put('/:id', async (req, res) => {
   const { id } = req.params
-  const dish = req.body
-  const { error, updatedDish } = await updateDish(id, dish)
+  const user = req.body
+  const { error, updatedUser } = await updateUser(id, user)
   if (error) {
     return res.status(500).json({ error: error.message})
   }else{
-    return res.status(200).json({ updatedDish })
+    return res.status(200).json({ updatedUser })
   }
 }
 )
@@ -61,11 +61,11 @@ users.put('/:id', async (req, res) => {
 // DELETE
 users.delete('/:id', async (req, res) => {
   const { id } = req.params
-  const { error, deletedDish } = await deleteDish(id)
+  const { error, deletedUser } = await deleteUser(id)
   if (error) {
     return res.status(500).json({ error: error.message})
   }else{
-    return res.status(200).json({ deletedDish })
+    return res.status(200).json({ deletedUser })
   }
 }
 )
