@@ -1,8 +1,6 @@
 DROP DATABASE IF EXISTS thetabledb;
 CREATE DATABASE thetabledb;
 
-
-
 \c thetabledb;
 
 CREATE TABLE users (
