@@ -13,7 +13,7 @@ INSERT INTO dishes (name, calories, is_vegan, category, image_url, portions)
 VALUES
 ('Slow Cooker Pork Carnitas Tacos', 284, false, 'Dinner', 'https://i.pinimg.com/564x/ef/8f/36/ef8f369c3f48dc722c0a998a5e0e95e1.jpg', 4),
 ('Shakshouka', 479, false, 'Breakfast', 'https://www.foodiesfeed.com/wp-content/uploads/2021/01/hot-shakshuka.jpg', 4),
-('Hummus with Bread', 267, true, 'Snack', 'https://www.foodiesfeed.com/wp-content/uploads/2021/01/hot-shakshuka.jpg', 8),
+('Hummus with Bread', 267, true, 'Snack', 'https://images.unsplash.com/photo-1603133872497-f29809b750bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80', 8),
 ('Baked Pasta', 580, false, 'Dinner', 'https://www.foodiesfeed.com/wp-content/uploads/2023/04/delicious-steak-with-herbs-cut-on-slices-1024x683.jpg', 10),
 ('Red Wine', 130, true, 'Drink', 'https://www.foodiesfeed.com/wp-content/uploads/2016/10/bottles-of-red-wine-1024x683.jpg', 10),
 ('Spinach Cream Soup', 160, true, 'Lunch', 'https://www.foodiesfeed.com/wp-content/uploads/2018/05/spinach-cream-soup.jpg', 4),
