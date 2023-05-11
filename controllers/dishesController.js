@@ -12,8 +12,9 @@ const {
 
 // INDEX
 dishes.get('/', async (req, res) => {
-  const { error, allDishes } = await getAllDishes()
-  if (error) {
+  const allDishes = await getAllDishes();
+  
+  if (allDishes.error) {
     return res.status(500).json({ error: error.message });
   } else {
     return res.status(200).json({ allDishes });
