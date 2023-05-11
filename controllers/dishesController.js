@@ -13,11 +13,11 @@ const {
 // INDEX
 dishes.get('/', async (req, res) => {
   const allDishes = await getAllDishes();
-  
+
   if (allDishes.error) {
     return res.status(500).json({ error: error.message });
   } else {
-    return res.status(200).json({ allDishes });
+    return res.status(200).json(allDishes);
   }
 }
 )
@@ -25,8 +25,8 @@ dishes.get('/', async (req, res) => {
 // SHOW
 dishes.get('/:id', async (req, res) => {
   const { id } = req.params
-  const { error, dish } = await getDish(id)
-  if (error) {
+  const dish = await getDish(id)
+  if (dish.error) {
     return res.status(500).json({ error: error.message})
   }else{
     return res.status(200).json({ dish })
@@ -37,8 +37,8 @@ dishes.get('/:id', async (req, res) => {
 // CREATE
 dishes.post('/', async (req, res) => {
   const dish = req.body
-  const { error, createdDish } = await createDish(dish)
-  if (error) {
+  const createdDish = await createDish(dish)
+  if (createdDish.error) {
     return res.status(500).json({ error: error.message})
   }else{
     return res.status(200).json({ createdDish })
@@ -50,8 +50,8 @@ dishes.post('/', async (req, res) => {
 dishes.put('/:id', async (req, res) => {
   const { id } = req.params
   const dish = req.body
-  const { error, updatedDish } = await updateDish(id, dish)
-  if (error) {
+  const updatedDish = await updateDish(id, dish)
+  if (updatedDish.error) {
     return res.status(500).json({ error: error.message})
   }else{
     return res.status(200).json({ updatedDish })
@@ -62,8 +62,8 @@ dishes.put('/:id', async (req, res) => {
 // DELETE
 dishes.delete('/:id', async (req, res) => {
   const { id } = req.params
-  const { error, deletedDish } = await deleteDish(id)
-  if (error) {
+  const deletedDish = await deleteDish(id)
+  if (deletedDish.error) {
     return res.status(500).json({ error: error.message})
   }else{
     return res.status(200).json({ deletedDish })
