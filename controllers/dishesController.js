@@ -38,6 +38,7 @@ dishes.get('/:id', async (req, res) => {
 dishes.post('/', async (req, res) => {
   const dish = req.body
   const createdDish = await createDish(dish)
+  console.log(await createDish(dish))
   if (createdDish.error) {
     return res.status(500).json({ error: "server error"})
   }else{

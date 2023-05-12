@@ -19,12 +19,19 @@ const getDish = async (id) => {
 const createDish = async (dish) => {
     try {
         const createdDish = await db.one(
-            `INSERT INTO
-              dishes(name, email, username, password, is_vegan, restrictions, date_joined)
+          `INSERT INTO
+              dishes(name, calorie, is_vegan, category, image_url, portions)
              VALUES
-               ($1, $2, $3, $4, $5, $6, $7)
-             RETURNING *;`, 
-             [dish.name, dish.email, dish.username, dish.password, dish.is_vegan, dish.restrictions, dish.date_joined]
+               ($1, $2, $3, $4, $5, $6)
+             RETURNING *;`,
+          [
+            dish.name,
+            dish.calorie,
+            dish.is_vegan,
+            dish.category,
+            dish.image_url,
+            dish.portions,
+          ]
         );
         return { createdDish };
     } catch (error) {
@@ -44,16 +51,15 @@ const deleteDish = async (id) => {
 const updateDish = async (id, dish) => {
     try {
         const updatedDish = await db.one(
-          `UPDATE dishes SET name=$1, email=$2, username=$3, password=$4, is_vegan=$5, restrictions=$6, date_joined=$7 WHERE id=$8 RETURNING *;`,
+          `UPDATE dishes SET name=$1, calorie=$2, is_vegan=$3, category=$4, image_url=$5, portions=$6 WHERE id=$7 RETURNING *;`,
           [
             dish.name,
-            dish.email,
-            dish.username,
-            dish.password,
+            dish.calorie,
             dish.is_vegan,
-            dish.restrictions,
-            dish.date_joined,
-            id
+            dish.category,
+            dish.image_url,
+            dish.portions,
+            id,
           ]
         );
         return updatedDish;
