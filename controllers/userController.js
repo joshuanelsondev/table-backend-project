@@ -11,10 +11,10 @@ const {
 
 // INDEX
 users.get('/', async (req, res) => {
-  const { error, users } = await getAllUsers()
+  const users  = await getAllUsers()
 
-  if (error) {
-    return res.status(500).json({ error: error.message})
+  if (users.error) {
+    return res.status(500).json({ error: "server error"})
   }else{
     return res.status(200).json({ users })
 
@@ -24,9 +24,9 @@ users.get('/', async (req, res) => {
 // SHOW
 users.get('/:id', async (req, res) => {
   const { id } = req.params
-  const { error, user } = await getUser(id)
-  if (error) {
-    return res.status(500).json({ error: error.message})
+  const  user = await getUser(id)
+  if (user.error) {
+    return res.status(500).json({ error: "server error"})
   }else{
     return res.status(200).json({ user })
   }
@@ -36,9 +36,9 @@ users.get('/:id', async (req, res) => {
 // CREATE
 users.post('/', async (req, res) => {
   const user = req.body
-  const { error, createdUser } = await createUser(user)
-  if (error) {
-    return res.status(500).json({ error: error.message})
+  const createdUser = await createUser(user)
+  if (createdUser.error) {
+    return res.status(500).json({ error: "server error"})
   }else{
     return res.status(200).json({ createdUser })
   }
@@ -49,9 +49,9 @@ users.post('/', async (req, res) => {
 users.put('/:id', async (req, res) => {
   const { id } = req.params
   const user = req.body
-  const { error, updatedUser } = await updateUser(id, user)
-  if (error) {
-    return res.status(500).json({ error: error.message})
+  const updatedUser = await updateUser(id, user)
+  if (updatedUser.error) {
+    return res.status(500).json({ error: "server error"})
   }else{
     return res.status(200).json({ updatedUser })
   }
@@ -61,9 +61,9 @@ users.put('/:id', async (req, res) => {
 // DELETE
 users.delete('/:id', async (req, res) => {
   const { id } = req.params
-  const { error, deletedUser } = await deleteUser(id)
-  if (error) {
-    return res.status(500).json({ error: error.message})
+  const deletedUser = await deleteUser(id)
+  if (deletedUser.error) {
+    return res.status(500).json({ error: "server error"})
   }else{
     return res.status(200).json({ deletedUser })
   }
