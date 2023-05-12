@@ -20,17 +20,18 @@ const createUser = async (user) => {
   try {
     const createdUser = await db.one(
       `INSERT INTO
-              users(name, calorie, is_vegan, category, image_url, portions)
+              users(name, email, username, password, is_vegan, restrictions, date_joined)
              VALUES
-               ($1, $2, $3, $4, $5, $6)
+               ($1, $2, $3, $4, $5, $6, $7)
              RETURNING *;`,
       [
         user.name,
-        user.calorie,
+        user.email,
+        user.username,
+        user.password,
         user.is_vegan,
-        user.category,
-        user.image_url,
-        user.portions
+        user.restrictions,
+        user.date_joined,
       ]
     );
     return { createdUser };
@@ -52,15 +53,16 @@ const deleteUser = async (id) => {
 const updateUser = async (id, user) => {
   try {
     const updatedUser = await db.one(
-      `UPDATE users SET name=$1, calorie=$2, is_vegan=$3, category=$4, image_url=$5, portions=$6 WHERE id=$7 RETURNING *;`,
+      `UPDATE users SET name=$1, email=$2, username=$3, password=$4, is_vegan=$5, restrictions=$6, date_joined=$7 WHERE id=$8 RETURNING *; `,
       [
         user.name,
-        user.calorie,
+        user.email,
+        user.username,
+        user.password,
         user.is_vegan,
-        user.category,
-        user.image_url,
-        user.portions,
-        id
+        user.restrictions,
+        user.date_joined,
+        id,
       ]
     );
     return updatedUser;
