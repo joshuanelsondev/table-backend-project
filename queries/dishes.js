@@ -20,13 +20,13 @@ const createDish = async (dish) => {
     try {
         const createdDish = await db.one(
           `INSERT INTO
-              dishes(name, calorie, is_vegan, category, image_url, portions)
+              dishes(name, calories, is_vegan, category, image_url, portions)
              VALUES
                ($1, $2, $3, $4, $5, $6)
              RETURNING *;`,
           [
             dish.name,
-            dish.calorie,
+            dish.calories,
             dish.is_vegan,
             dish.category,
             dish.image_url,
@@ -51,10 +51,10 @@ const deleteDish = async (id) => {
 const updateDish = async (id, dish) => {
     try {
         const updatedDish = await db.one(
-          `UPDATE dishes SET name=$1, calorie=$2, is_vegan=$3, category=$4, image_url=$5, portions=$6 WHERE id=$7 RETURNING *;`,
+          `UPDATE dishes SET name=$1, calories=$2, is_vegan=$3, category=$4, image_url=$5, portions=$6 WHERE id=$7 RETURNING *;`,
           [
             dish.name,
-            dish.calorie,
+            dish.calories,
             dish.is_vegan,
             dish.category,
             dish.image_url,
