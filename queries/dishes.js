@@ -10,7 +10,7 @@ const getAllDishes = async () => {
 };
 const getDish = async (id) => {
     try {
-        const dish = await db.any("SELECT * FROM dishes WHERE id=$1", id);
+        const dish = await db.one("SELECT * FROM dishes WHERE id=$1", id);
         return { dish };
     } catch (error) {
         return { error: error };
