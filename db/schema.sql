@@ -29,9 +29,10 @@ CREATE TABLE user_dishes (
  user_id INTEGER NOT NULL,
  dish_id INTEGER NOT NULL,
  type TEXT NOT NULL,
- FOREIGN KEY (user_id) REFERENCES users(id),
- FOREIGN KEY (dish_id) REFERENCES dishes(id),
+ FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+ FOREIGN KEY (dish_id) REFERENCES dishes(id) ON DELETE CASCADE,
  UNIQUE(user_id, dish_id)
 );
+
 
 
