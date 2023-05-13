@@ -3,6 +3,14 @@
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 
+ALTER TABLE user_dishes
+DROP CONSTRAINT user_dishes_dish_id_fkey,
+ADD CONSTRAINT user_dishes_dish_id_fkey
+FOREIGN KEY (dish_id)
+REFERENCES dishes(id)
+ON DELETE CASCADE;
+
+
 INSERT INTO users (name, email, username, password, is_vegan, restrictions, date_joined)
 VALUES 
  ('Alice', 'alice@example.com', 'alice', crypt('password1', gen_salt('bf')), false, '{}', '2022-01-01'),
