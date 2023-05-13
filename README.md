@@ -4,16 +4,16 @@
 The Table Potluck App is a web application built using the PERN stack (PostgreSQL, Express.js, React.js, and Node.js) that simplifies the process of organizing and managing potluck events. With this app, users can add, create, delete, and update dishes for their potluck events. The backend server is powered by PostgreSQL, providing a reliable and scalable data storage solution.
 
 ## Table of Contents
-###-_Key Features_
-###-_Team Members_
-###-_Contributing_
-###-_Technologies Used_
-###-_Project Structure_
-###-_Development Process_
+###_Key Features_
+###_Team Members_
+###_Contributing_
+###_Technologies Used_
+###_Project Structure_
+###_Development Process_
 ###-_Deployment_
-##-_Installations_
-###-_App Endpoints_
-###-_License_
+##_Installations_
+###_App Endpoints_
+###_License_
 
 
 # Key Features
@@ -23,6 +23,7 @@ The Table Potluck App is a web application built using the PERN stack (PostgreSQ
 -Update a dish: Participants can modify the details of their contributed dish, such as changing the name, description, ingredients, or other attributes.
 
 # Team Members
+
 -Florence Ernestina Osei
 -Joshua Nelson
 -Lakisha Trusty
@@ -35,22 +36,13 @@ We value collaboration and contributions from the team members. We have used a T
 # Technologies Used
 The Table Potluck App leverages the following technologies and frameworks:
 
-##Frontend
+## Frontend
 -React.js
 -React Router
 -Axios
-
-
 -Tailwind CSS
 -Canva (for creating beautiful designs)
 
-###Frontend Dependencies:
--react: ^17.0.2
--react-dom: ^17.0.2
--react-router-dom: ^5.3.0
-react-dom
--axios: ^0.21.1
--tailwindcss: ^2.2.7
 
 ## Backend
 -PostgreSQL
