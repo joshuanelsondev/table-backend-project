@@ -2,7 +2,6 @@
 
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
-
 ALTER TABLE user_dishes
 DROP CONSTRAINT user_dishes_dish_id_fkey,
 ADD CONSTRAINT user_dishes_dish_id_fkey
