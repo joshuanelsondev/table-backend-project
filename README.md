@@ -94,9 +94,10 @@ Create a new branch for your feature or bug fix
 cd the-table-app
 
 ## Installing the dependencies backend
-cd the-table/backend
-npm install express pg dotenv nodemon cors --save
-npm install / npm i
+- cd the-table/backend
+- npm install express pg dotenv nodemon cors --save
+- npm install / npm i
+ 
 ## Set up the PostgreSQL database by executing the schema and seed files:
 - psql -f db/schema.sql
 - psql -f db/seed.sql
