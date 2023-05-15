@@ -125,4 +125,4 @@ Set up the environment variables:
 - DELETE /api/dishes/:id: Delete a dish by ID.
 
  # License
-This project is licensed under Pursuit
+This project is licensed under [Pursuit](https://www.pursuit.org/)
