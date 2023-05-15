@@ -107,15 +107,7 @@ cd the-table-app
 - npm run dev(used to run app still in development mode)
 
 The backend server will run on [The Table](http://localhost:3003)
-
-# Frontend dependencies
-cd client
-npm install
-
-Set up the environment variables:
-- Create a .env file in the project root.
-- Define the required environment variables, such as the database connection string, API keys, etc.
-
+ 
 #
 # Endpoints
 - GET /api/dishes: Get all dishes.
