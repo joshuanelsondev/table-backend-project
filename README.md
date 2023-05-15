@@ -1,21 +1,18 @@
-
-# The Table App
+# Welcome to The Table App Backend Repo
 
 The Table Potluck App is a web application built using the PERN stack (PostgreSQL, Express.js, React.js, and Node.js) that simplifies the process of organizing and managing potluck events. With this app, users can add, create, delete, and update dishes for their potluck events. The backend server is powered by PostgreSQL, providing a reliable and scalable data storage solution.
 
 ## Table of Contents
-### _Key Features_
-### _Team Members_
-### _Contributing_
-### _Technologies Used_
-### _Project Structure_
-### _Development Process_
-### _Deployment_
-## _Installations_
-### _App Endpoints_
-### _License_
-
-
+_Key Features_
+_Team Members_
+_Contributing_
+_Technologies Used_
+_Project Structure_
+-_Development Process_
+_Deployment_
+_Installations_
+_App Endpoints_
+_License_
 # Key Features
 - Add a dish: Users can easily add a new dish to their potluck event, including details such as dish name, description, ingredients, and any other relevant information.
 - View all dishes: Participants can browse through a comprehensive list of dishes contributed by other users, ensuring a diverse and well-coordinated spread of food.
@@ -23,36 +20,20 @@ The Table Potluck App is a web application built using the PERN stack (PostgreSQ
 - Update a dish: Participants can modify the details of their contributed dish, such as changing the name, description, ingredients, or other attributes.
 
 # Team Members
-- Florence Ernestina Osei
-- Joshua Nelson
-- Lakisha Trusty
+-Florence Ernestina Osei
+-Joshua Nelson
+-Lakisha Trusty
 
 # Contributions
 We value collaboration and contributions from the team members. We have used a Trello board to keep track of tasks, assign responsibilities, and maintain transparency in the development process. Pair programming is encouraged, allowing team members to work together on challenging tasks and ensuring high-quality code.
 
+## [Trello Board](https://trello.com/b/qnXqs6o9/the-table-project)
 
+## [canva](https://www.canva.com/design/DAFiYB7wjic/t3gjY1McoAbUvgL3m6Ao5A/view?analyticsCorrelationId=c62f75f0-0019-457f-ae1e-117efc0d4509)
 
 # Technologies Used
 The Table Potluck App leverages the following technologies and frameworks:
-
-##Frontend
-- React.js
-- React Router
-- Axios
-
-
-- Tailwind CSS
-- Canva (for creating beautiful designs)
-
-###Frontend Dependencies:
-- react: ^17.0.2
-- react-dom: ^17.0.2
-- react-router-dom: ^5.3.0
-react-dom
-- axios: ^0.21.1
-- tailwindcss: ^2.2.7
-
-## Backend
+## Backend Frame work
 - PostgreSQL
 - Express.js
 - Node.js
@@ -71,7 +52,6 @@ The project follows a modular structure to ensure code organization and maintain
 
 The backend utilizes the schema and seed files to set up and populate the database with initial data.
 
-
 # Development Process
 To get started with the development of the Table Potluck App:
 
@@ -81,19 +61,19 @@ To get started with the development of the Table Potluck App:
 - Regularly communicate, share progress, and seek assistance when needed.
 
 ## Deployment
-The backend server is deployed on Render and can be accessed at [Link](https://the-table-backend.onrender.com)
+The backend server is deployed on Render and can be accessed at [Onrender](https://the-table-backend.onrender.com)
 
-The frontend application is deployed on Netlify and can be accessed at [Link] 
-(https://app.netlify.com/sites/thetable-app/deploys/645e6a561142220008d155cc)
+The frontend application is deployed on Netlify and can be accessed at 
+[netlify](https://app.netlify.com/sites/thetable-app/deploys/645e6a561142220008d155cc)
 
 
-#Installation
+# Installation
 - To install and run the Table App locally, follow these steps:
 
 ## Backend Installation 
-#Github 
+## [Github](https://github.com/)
 ### Clone this repository:
-git clone https://github.com/your-username/potluck-app.git
+git clone [The Table Backend Repo](https://github.com/joshuanelsondev/table-backend-project.git)
 
 ## Creating a branch 
 Create a new branch for your feature or bug fix
@@ -115,21 +95,17 @@ cd the-table-app
 
 ## Installing the dependencies backend
 cd the-table/backend
-npm install express pg dotenv nodemon --save
+npm install express pg dotenv nodemon cors --save
 npm install / npm i
-
-## Installing dependencies frontend
-npm install react react-dom react-router-dom axios tailwindcss @tailwindcss/postcss7-compat postcss autoprefixer cross-env --save
-
 ## Set up the PostgreSQL database by executing the schema and seed files:
-- npx sequelize-cli db:migrate
-- npx sequelize-cli db:seed:all
+- psql -f db/schema.sql
+- psql -f db/seed.sql
 
 ## Start the backend server:
 - npm start
 - npm run dev(used to run app still in development mode)
 
-The backend server will run on [Link]http://localhost:5000.
+The backend server will run on [The Table](http://localhost:3003)
 
 # Frontend dependencies
 cd client
@@ -147,4 +123,5 @@ Set up the environment variables:
 - PUT /api/dishes/:id: Update an existing dish by ID.
 - DELETE /api/dishes/:id: Delete a dish by ID.
 
-
+ # License
+This project is licensed under Pursuit
