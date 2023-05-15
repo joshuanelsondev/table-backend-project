@@ -64,7 +64,7 @@ To get started with the development of the Table Potluck App:
 The backend server is deployed on Render and can be accessed at [Onrender](https://the-table-backend.onrender.com)
 
 The frontend application is deployed on Netlify and can be accessed at 
-[netlify](https://app.netlify.com/sites/thetable-app/deploys/645e6a561142220008d155cc)
+[netlify](https://thetable-app.netlify.app/)
 
 
 # Installation
