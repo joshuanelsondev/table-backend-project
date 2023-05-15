@@ -106,7 +106,7 @@ cd the-table-app
 - npm start
 - npm run dev(used to run app still in development mode)
 
-The backend server will run on [The Table](http://localhost:3003)
+The backend server will run on [The Table](http://localhost:3003/users)
  
 #
 # Endpoints
