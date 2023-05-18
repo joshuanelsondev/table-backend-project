@@ -19,12 +19,13 @@ app.get("/", (req, res) => {
     res.send("Welcome to the Table App");
 });
 
-app.get("*", (req, res) => {
-  res.status(404).send("Page not found");
-});
 
 app.use('/users', usersController);
 app.use('/dishes', dishesController);
 app.use('/userDishes', userDishesController)
+
+app.get("*", (req, res) => {
+  res.status(404).send("Page not found");
+});
 
 module.exports = app;
